@@ -5,7 +5,7 @@ const loadData = () => {
     .then((data) => console.log(data));
 };
 
-const loadpost = () => {
+const loadPost = () => {
   const url = "https://jsonplaceholder.typicode.com/posts";
 
   fetch(url)
@@ -15,36 +15,37 @@ const loadpost = () => {
       displayPost(json);
     });
 };
+// ------------------------------------------------------>>>>>>>>>
+const displayPosts = (posts) => {
+  for (let i = 0; i < posts.length; i++) {
+    console.log(posts[i]);
+  }
 
-const displayPost = (posts) => {
-  // for(let i = 0 ; i < posts.length; i++){
-  //   console.log(posts[i])
-  // }
-
-  // for (let post of posts) {
-  //   console.log(post);
-  // }
+  for (let post of posts) {
+    console.log(post);
+  }
 
   // ---------------- array of object
 
   //  1. get the container
   const postContainer = document.getElementById("post-container");
-  console.log(postContainer);
+  postContainer.innerHTML = "";
+  //  console.log(postContainer);
 
   posts.forEach((post) => {
-    // console.log(post.title);
+    console.log(post.title);
 
-    // 2. create HTML element
+    //     // 2. create HTML element
     const li = document.createElement("li");
     li.innerText = post.title;
     console.log(li);
 
-    // 3. add li into container
+    //     // 3. add li into container
     postContainer.appendChild(li);
   });
 };
 
-// ---------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>.
+// // ---------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>.
 
 console.log("Explore API");
 
