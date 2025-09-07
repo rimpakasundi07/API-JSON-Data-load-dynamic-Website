@@ -17,34 +17,56 @@ const loadpost = () => {
 };
 
 const displayPost = (posts) => {
+  // for(let i = 0 ; i < posts.length; i++){
+  //   console.log(posts[i])
+  // }
+
+  // for (let post of posts) {
+  //   console.log(post);
+  // }
+
+  // ---------------- array of object
+
+  //  1. get the container
+  const postContainer = document.getElementById("post-container");
+  console.log(postContainer);
+
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post.title);
+
+    // 2. create HTML element
+    const li = document.createElement("li");
+    li.innerText = post.title;
+    console.log(li);
+
+    // 3. add li into container
+    postContainer.appendChild(li);
   });
 };
 
 // ---------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>.
 
-// console.log("Explore API");
+console.log("Explore API");
 
-// const person = {
-//   name: "Nikita",
-//   fruit: "Strawberry",
-//   dish: "mutton thali",
-//   friends: ["Soniya", "Riya", "Keya"],
-//   isRich: true,
-//   money: 34000,
-// };
+const person = {
+  name: "Nikita",
+  fruit: "Strawberry",
+  dish: "mutton thali",
+  friends: ["Soniya", "Riya", "Keya"],
+  isRich: true,
+  money: 34000,
+};
 
-// console.log(person, typeof person);
+console.log(person, typeof person);
 
 // * JSON -> JS object with Notation
 // * JSON.stringify -> JSON
 // * JSON.parse -> object
 
-// const personJSON = JSON.stringify(person);
-// console.log(personJSON, typeof personJSON);
+const personJSON = JSON.stringify(person);
+console.log(personJSON, typeof personJSON);
 
-// const parseJSON = JSON.parse(personJSON);
-// console.log(parseJSON);
+const parseJSON = JSON.parse(personJSON);
+console.log(parseJSON);
 
 // -------------------------------------->>>>>>>>>>>>>>>>>>>>>>>
